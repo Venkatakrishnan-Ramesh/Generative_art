@@ -4,17 +4,27 @@
 
 # **L-systems** 
 **L-systems**  (also called Lindenmayer systems or parallel string-rewrite systems) are a compact way to describe iterative graphics using a turtle analogy, similar to that used by the LOGO programming language. An L-system is created by starting with an axiom, such as a line segment, and one or more production rules, which are statements such as “replace every line segment with a left turn, a line segment, a right turn, another segment...”. When this system is iterated several times, the result is often a complicated fractal curve.
+
 >The **L-systems** code representation of  **Sierpiński triangle**  is <br/>
         F -> FF, <br/>
         X -> --FXF++FXF++FXF--, <br/>
        angle made intially with respect to the origin is 60°<br/>
   
   We use two lines of string and we replace and itterate the strings with [strrep](https://www.mathworks.com/help/matlab/ref/strrep.html) of [MATLAB](https://www.mathworks.com/)
+  
+  when we came across the character '*F*' or '*X*' we draw a straight line from the old point to the new point in the logic of <br/>
+        newx=oldx+cos((alpha));<br/>
+        newy=oldy+sin((alpha));<br/>
+   where alpha is the intial angle which must be made with origin
+   alpha=alpha+delta
+  where delta must be made 
+   when we came across the character '+' we add 
+ 
  >Strg='X';<br/>
   Strx=' --FXF++FXF++FXF--';<br/>
   Strf='FF';<br/>
-  Str1=strrep(strrep(strrep(Strg,'X','1'),'F',Strf),'1',Strx);<br/>
-  n=length(Str1)<br/>
+  Str1=strrep(strrep(strrep(Strg,'X','1'),'F',Strf),'1',Strx); In<br/>
+  n=length(Str1) in order to iterate the loop until length of the string <br/>
   index=0;<br/>
   % following three arrays are to track branching in the tree<br/>
   % we do not use stack<br/>
