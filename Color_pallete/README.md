@@ -1,0 +1,2 @@
+# Color pallete
+ BASED ON GAUSSIAN DISTRIBUTION
